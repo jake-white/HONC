@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GameboySpaceMat
+  m_Shader: {fileID: 4800000, guid: 6f9d53d0c7b34b940b81dd3be27b5535, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorPalette:
+        m_Texture: {fileID: 2800000, guid: 687155ad34a6f3d47a725de5badef896, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _LineP: 0.5
+    - _LineW: 2
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Size: 2
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Black1: {r: 0, g: 0, b: 0, a: 1}
+    - _Black2: {r: 0.08235294, g: 0.07450981, b: 0.07450981, a: 1}
+    - _Black3: {r: 0.227451, g: 0.21176472, b: 0.20000002, a: 1}
+    - _Black4: {r: 0.38431376, g: 0.35686275, b: 0.3372549, a: 1}
+    - _Blue1: {r: 0.10980393, g: 0.10980393, b: 0.16078432, a: 1}
+    - _Blue2: {r: 0.21568628, g: 0.21960784, b: 0.3529412, a: 1}
+    - _Blue3: {r: 0.39215687, g: 0.4745098, b: 0.7490196, a: 1}
+    - _Blue4: {r: 0.57254905, g: 0.6156863, b: 0.75294125, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Dark: {r: 0.019607844, g: 0.019607844, b: 0.047058824, a: 1}
+    - _Dark2: {r: 0.21568628, g: 0.21960784, b: 0.3529412, a: 1}
+    - _Darkest: {r: 0, g: 0, b: 0, a: 1}
+    - _Darkest2: {r: 0.13333334, g: 0.28235295, b: 0.13725491, a: 1}
+    - _Dead1: {r: 0.023529414, g: 0.023529414, b: 0.023529414, a: 1}
+    - _Dead2: {r: 0.13725491, g: 0.12941177, b: 0.1254902, a: 1}
+    - _Dead3: {r: 0.25490198, g: 0.2392157, b: 0.22352943, a: 1}
+    - _Dead4: {r: 0.4156863, g: 0.38823533, b: 0.36078432, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Green1: {r: 0.015797436, g: 0.047169805, b: 0.02303721, a: 1}
+    - _Green2: {r: 0.054901965, g: 0.14509805, b: 0.06666667, a: 1}
+    - _Green3: {r: 0.13333334, g: 0.3019608, b: 0.14117648, a: 1}
+    - _Green4: {r: 0.25882354, g: 0.4901961, b: 0.25882354, a: 1}
+    - _Light: {r: 0.027450982, g: 0.06666667, b: 0.03529412, a: 1}
+    - _Light2: {r: 0.2, g: 0.28627452, b: 0.5647059, a: 0.972549}
+    - _Lightest: {r: 0.054901965, g: 0.1254902, b: 0.0627451, a: 1}
+    - _Lightest2: {r: 0.505162, g: 0.5801681, b: 0.8301887, a: 1}
+    - _Ligt: {r: 0.46080932, g: 0.15659486, b: 0.6509434, a: 1}
+    - _Ligtest: {r: 0.65944284, g: 0.6886792, b: 0.6009701, a: 1}
+    - _Player: {r: 0.7372549, g: 0.05882353, b: 0.023529412, a: 1}
+    - _White1: {r: 1, g: 1, b: 1, a: 1}
+    - _White2: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+    - _Yellow1: {r: 0.7294118, g: 0.69411767, b: 0.48235294, a: 1}
+    - _Yellow2: {r: 0.7294118, g: 0.6117647, b: 0.48235294, a: 1}
