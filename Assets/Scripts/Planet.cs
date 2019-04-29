@@ -12,6 +12,7 @@ public class Planet : MonoBehaviour
     string planetName;
     public bool isDemo, isMoon;
     bool interacting = false;
+    public float minOcean = .9f;
     bool eventTriggered = false, onceFinished = false;
     float timeEventTriggered = 0;
     
@@ -51,7 +52,7 @@ public class Planet : MonoBehaviour
 
     void UpdateAppearance() {
         float atmosphereValue = ((GetOxygen(true) + GetNitrogen(true)) / 2) / 10;
-        float oceanValue = 0.95f + (0.05f * (GetHydrogen(true) * GetOxygen(true)));
+        float oceanValue = minOcean + ((1.0f-minOcean) * (GetHydrogen(true) * GetOxygen(true)));
 
         float colorValue = GetHydrogen(true) * GetOxygen(true) * GetNitrogen(true) * GetCarbon(true);
         float redNeeded = (finalColor.r - initialColor.r) * colorValue;

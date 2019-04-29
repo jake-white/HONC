@@ -81,7 +81,7 @@ public class UIController : MonoBehaviour
             rightScreenText.text = "Asteroid approaching " + target.GetName() + "!";
         }
         if (type == SpaceEvent.SpaceEventType.Comet) {
-            leftscreen.GetComponent<Animator>().Play("Asteroid");
+            leftscreen.GetComponent<Animator>().Play("Comet");
             rightScreenText.text = "Comet approaching " + target.GetName() + "!";
         }
         else if (type == SpaceEvent.SpaceEventType.SolarFlare) {

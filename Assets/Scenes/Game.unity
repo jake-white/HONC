@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 12626050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children:
   - {fileID: 1547299064}
   m_Father: {fileID: 2060898640}
@@ -445,6 +445,7 @@ MonoBehaviour:
   finalColor: {r: 0.59876895, g: 0.78431374, b: 0.35686272, a: 0}
   isDemo: 0
   isMoon: 0
+  minOcean: 0.65
 --- !u!4 &65417694
 Transform:
   m_ObjectHideFlags: 0
@@ -6210,7 +6211,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 19.75
+  m_fontSize: 18.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11869,7 +11870,7 @@ MonoBehaviour:
   Distortion: -0.1
   InputGamma: 1
   OutputGamma: 1.6
-  TextureSize: 1018.5
+  TextureSize: 958.5
 --- !u!4 &677298225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7737042832299104256, guid: ea958986effc4bd4eb02c7abafae0f48,
@@ -12234,8 +12235,8 @@ MonoBehaviour:
   nitrogenButton: {fileID: 1258684411}
   carbonButton: {fileID: 1698506333}
   targetedObject: {fileID: 0}
-  transferSpeed: 0.003
-  lasercooldown: 0.5
+  transferSpeed: 0.009
+  lasercooldown: 0.2
 --- !u!4 &761476728
 Transform:
   m_ObjectHideFlags: 0
@@ -12423,7 +12424,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28
+  m_fontSize: 26.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -22525,7 +22526,7 @@ Transform:
   m_GameObject: {fileID: 899335137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children:
   - {fileID: 1775853862}
   m_Father: {fileID: 65417694}
@@ -22748,6 +22749,7 @@ MonoBehaviour:
   finalColor: {r: 0.59876895, g: 0.78431374, b: 0.35686272, a: 0}
   isDemo: 0
   isMoon: 0
+  minOcean: 0.65
 --- !u!54 &943722860
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33331,7 +33333,7 @@ Transform:
   m_GameObject: {fileID: 1169556990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children:
   - {fileID: 1382588174}
   m_Father: {fileID: 943722861}
@@ -35379,7 +35381,7 @@ Transform:
   m_GameObject: {fileID: 1630218648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children:
   - {fileID: 1239127283}
   m_Father: {fileID: 1764718822}
@@ -40837,6 +40839,7 @@ MonoBehaviour:
   finalColor: {r: 0.7830189, g: 0.43121797, b: 0.35826808, a: 0}
   isDemo: 0
   isMoon: 1
+  minOcean: 0.65
 --- !u!1 &1775853861
 GameObject:
   m_ObjectHideFlags: 0
@@ -41570,7 +41573,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -42033,6 +42036,7 @@ MonoBehaviour:
   finalColor: {r: 0.59876895, g: 0.78431374, b: 0.35686272, a: 0}
   isDemo: 0
   isMoon: 0
+  minOcean: 0.65
 --- !u!4 &2060898640
 Transform:
   m_ObjectHideFlags: 0

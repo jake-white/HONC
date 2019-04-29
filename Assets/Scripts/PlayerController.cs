@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
             pitchInput = Mathf.Clamp(Input.GetAxis("Pitch"), -1, 1) * .007f;
             rollInput = Mathf.Clamp(Input.GetAxis("Roll"), -1, 1) * .007f;
             thrustInput = Mathf.Clamp(Input.GetAxis("Thrust"), -1, 1) * 5.0f;
-            warpInput = ((Mathf.Clamp(Input.GetAxis("Warp"), 0, 1) * 15.0f) + 1);
+            warpInput = ((Mathf.Clamp(Input.GetAxis("Warp"), 0, 1) * 25.0f) + 1);
             if(warpInput > 1) {
                 if(!starField.isPlaying) {
                     starField.Play();

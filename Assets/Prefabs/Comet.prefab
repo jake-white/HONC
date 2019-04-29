@@ -1295,7 +1295,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1303,8 +1303,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.37254903, g: 0.78431374, b: 0.68235296, a: 1}
+        key1: {r: 0.37254903, g: 0.78431374, b: 0.68235296, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4894,6 +4894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   isComet: 1
+  isEvent: 0
   asteroidExplosion: {fileID: 7188096799959657288, guid: 3e9c99f3cb7f8824490eef2e231e5e7e,
     type: 3}
   mesh: {fileID: 1765009048691042600}
@@ -6223,7 +6224,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -6231,8 +6232,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.60784316, g: 0.9137255, b: 0.85882354, a: 1}
+        key1: {r: 0.60784316, g: 0.9137255, b: 0.85882354, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

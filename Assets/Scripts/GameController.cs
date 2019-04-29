@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
                     randomIndex = Random.Range(0, untriggered.Count);
                 }
             }
-            if (gameState == 1) {
+            if (gameState == 2) {
                 nextEvent = new SpaceEvent(SpaceEvent.SpaceEventType.Asteroid, untriggered[randomIndex], new Vector3(2 * untriggered[randomIndex].transform.localScale.x, 20, 0));
                 untriggered[randomIndex].TriggerEvent();
             }
@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
                 nextEvent = new SpaceEvent(SpaceEvent.SpaceEventType.SolarFlare, untriggered[randomIndex], untriggered[randomIndex].transform.position);
                 untriggered[randomIndex].TriggerEvent();
             }
-            else if(gameState == 2) {
+            else if(gameState == 1) {
                 nextEvent = new SpaceEvent(SpaceEvent.SpaceEventType.Comet, untriggered[randomIndex], new Vector3(2 * untriggered[randomIndex].transform.localScale.x, 20, 0));
                 untriggered[randomIndex].TriggerEvent();
             }

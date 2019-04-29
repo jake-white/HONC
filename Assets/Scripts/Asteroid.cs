@@ -22,6 +22,7 @@ public class Asteroid : MonoBehaviour
     {
         if (isComet && !forceStarted) {
             Vector3 direction = target.transform.position - transform.position;
+            transform.LookAt(2* transform.position - target.transform.position);
             rb.AddRelativeForce(direction.normalized * speed, ForceMode.Impulse);
             forceStarted = true;
         }
