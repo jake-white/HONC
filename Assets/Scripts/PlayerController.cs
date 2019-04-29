@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         if(targetedObject != null) {
             Vector3 markerPos = targetedObject.transform.position;
             Vector3 screenPoint = Camera.main.WorldToScreenPoint(markerPos);
-            Debug.Log(screenPoint);
             if(screenPoint.z > 0) {
                 UIController.instance.SetMarker(screenPoint);
             }
