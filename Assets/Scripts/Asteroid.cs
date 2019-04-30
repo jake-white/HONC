@@ -20,11 +20,17 @@ public class Asteroid : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isComet && !forceStarted) {
+        if (target != null && isComet && !forceStarted) {
             Vector3 direction = target.transform.position - transform.position;
             transform.LookAt(2* transform.position - target.transform.position);
             rb.AddRelativeForce(direction.normalized * speed, ForceMode.Impulse);
             forceStarted = true;
+        }
+        else if(!isEvent && isComet && !forceStarted) {
+            transform.LookAt(2 * transform.position - transform.forward);
+            rb.AddRelativeForce(-transform.forward * speed, ForceMode.Impulse);
+            forceStarted = true;
+
         }
         else if(target != null && !forceStarted) {
             Vector3 direction = target.transform.position - transform.position;

@@ -20,10 +20,10 @@ public class IntroScript : MonoBehaviour
         if(Input.GetMouseButtonDown(0)) {
             ++page;
             if(page == 1) {
-                introText.text = "The last system of your contract, System No.1876, should be an easy one. \n\nPlanets are our objective. Moons don't make money.";
+                introText.text = "The last system of your contract, System No.1876, should be an easy one. \n\nAs usual, planets are our objective. Moons don't make money. And hit asteroids for extra elements.";
             }
             if(page == 2) {
-                introText.text = "We'll bring you home when all 9 planets sustain <color=#FF9696>Life</color>.\n\n" +
+                introText.text = "We'll bring you home when all 7 planets sustain <color=#FF9696>Life</color>.\n\n" +
                     "Deliver the building blocks of <color=#FF9696>Life</color> using WASD + mouse to move and SHIFT to warp.";
 
             }

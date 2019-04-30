@@ -18,8 +18,8 @@ public class CreditsText : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             ++page;
             if (page == 1) {
-                float percent = 0;
-                //percent = GameObject.Find("GameController").GetComponent<GameController>().GetPercent();
+                int percent = 0;
+                percent = (int) Mathf.Floor(GameObject.Find("GameController").GetComponent<GameController>().GetPercent());
                 introText.text = "You restored " + percent + "% <color=#FF9696>Life</color> to the system.\n\n" +
                     "Game by Jake White (@squirrelboyVGC). Thanks to Ben Busche for the music tracks!";
             }

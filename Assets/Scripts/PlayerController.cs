@@ -29,7 +29,18 @@ public class PlayerController : MonoBehaviour
         cam.transform.SetPositionAndRotation(originalcam.position, originalcam.rotation);
         lastFired = -lasercooldown;
     }
-    
+
+    private void Update() {
+        if (!interacting) {
+            if (Input.GetAxis("Fire") > 0 && Time.time > lastFired + lasercooldown) {
+                GameObject newLaser = Instantiate(laserPrefab);
+                newLaser.transform.position = transform.position;
+                newLaser.transform.rotation = transform.rotation;
+                lastFired = Time.time;
+            }
+        }
+    }
+
     void FixedUpdate() {
         if(targetedObject != null) {
             Vector3 markerPos = targetedObject.transform.position;
@@ -83,14 +94,6 @@ public class PlayerController : MonoBehaviour
 
         if (interacting) {
             CheckElementalInputs();
-        }
-        else {
-            if (Input.GetAxis("Fire") > 0 && Time.time > lastFired + lasercooldown) {
-                GameObject newLaser = Instantiate(laserPrefab);
-                newLaser.transform.position = transform.position;
-                newLaser.transform.rotation = transform.rotation;
-                lastFired = Time.time;
-            }
         }
     }
 

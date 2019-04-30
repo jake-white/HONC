@@ -56,12 +56,16 @@ public class GameController : MonoBehaviour
                 nextEvent = new SpaceEvent(SpaceEvent.SpaceEventType.Asteroid, untriggered[randomIndex], new Vector3(2 * untriggered[randomIndex].transform.localScale.x, 20, 0));
                 untriggered[randomIndex].TriggerEvent();
             }
-            else if (gameState == 3) {
+            else if (gameState == 4) {
                 nextEvent = new SpaceEvent(SpaceEvent.SpaceEventType.SolarFlare, untriggered[randomIndex], untriggered[randomIndex].transform.position);
                 untriggered[randomIndex].TriggerEvent();
             }
-            else if(gameState == 1) {
+            else if(gameState == 5) {
                 nextEvent = new SpaceEvent(SpaceEvent.SpaceEventType.Comet, untriggered[randomIndex], new Vector3(2 * untriggered[randomIndex].transform.localScale.x, 20, 0));
+                untriggered[randomIndex].TriggerEvent();
+            }
+            if (gameState == 6) {
+                nextEvent = new SpaceEvent(SpaceEvent.SpaceEventType.Asteroid, untriggered[randomIndex], new Vector3(2 * untriggered[randomIndex].transform.localScale.x, 20, 0));
                 untriggered[randomIndex].TriggerEvent();
             }
         }
@@ -110,6 +114,7 @@ public class GameController : MonoBehaviour
         else if (nextEvent.type == SpaceEvent.SpaceEventType.Supernova) {
             music.Stop();
             music.clip = nightmare;
+            music.loop = false;
             music.Play();
             percent = 100 * ((float) AmountPlanetsFinished() + AmountMoonsFinished()) / ((float)AmountPlanets() + AmountMoons());
             PlayerController.instance.FinalSequence();

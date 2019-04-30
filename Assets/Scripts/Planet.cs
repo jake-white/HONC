@@ -6,9 +6,10 @@ public class Planet : MonoBehaviour
 {
     Rigidbody rb;
     float hydrogen, oxygen, nitrogen, carbon;
-    public GameObject ocean, atmosphere, continent;
+    public GameObject ocean, atmosphere, continent, meshContainer;
     public float maxLevels = 1.0f, rotationModifier = 1.0f;
     public Color initialColor, finalColor;
+    List<MeshRenderer> meshes;
     string planetName;
     public bool isDemo, isMoon;
     bool interacting = false;
@@ -17,6 +18,12 @@ public class Planet : MonoBehaviour
     float timeEventTriggered = 0;
     
     void Start() {
+        meshes = new List<MeshRenderer>();
+        foreach (Transform child in meshContainer.transform) {
+            if(child.GetComponent<MeshRenderer>() != null) {
+                meshes.Add(child.GetComponent<MeshRenderer>());
+            }
+        }
         rb = GetComponent<Rigidbody>();
         UpdateAppearance();
         if(isDemo) {
@@ -54,10 +61,28 @@ public class Planet : MonoBehaviour
         float atmosphereValue = ((GetOxygen(true) + GetNitrogen(true)) / 2) / 10;
         float oceanValue = minOcean + ((1.0f-minOcean) * (GetHydrogen(true) * GetOxygen(true)));
 
-        float colorValue = GetHydrogen(true) * GetOxygen(true) * GetNitrogen(true) * GetCarbon(true);
+        float colorValue = GetHydrogen(true) * GetNitrogen(true) * GetCarbon(true);
         float redNeeded = (finalColor.r - initialColor.r) * colorValue;
         float greenNeeded = (finalColor.g - initialColor.g) * colorValue;
         float blueNeeded = (finalColor.b - initialColor.b) * colorValue;
+
+        float meshValue = GetCarbon(true)/2 + GetOxygen(true)/2;
+
+        int numberOfMeshesToRender = (int) Mathf.Floor(meshValue * meshes.Count);
+
+        //enabling meshes based on colorValue
+        for(int i = 0; i < meshes.Count; ++i) {
+            if(i < numberOfMeshesToRender) {
+                if (!meshes[i].enabled) {
+                    meshes[i].enabled = true;
+                }
+            }
+            else {
+                if (meshes[i].enabled) {
+                    meshes[i].enabled = false;
+                }
+            }
+        }
 
         Color currentColor = new Color(initialColor.r + redNeeded, initialColor.g + greenNeeded, initialColor.b + blueNeeded);
 

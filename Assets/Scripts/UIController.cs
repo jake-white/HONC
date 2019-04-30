@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     public static UIController instance;
     public TextMeshProUGUI planetText, leaveButton, completion, rightScreenText, cockpitnametext;
     public Image cockpitnamebar, meters, leftscreen, rightscreen;
-    public Image hydrogen, oxygen, nitrogen, carbon, marker;
+    public Image hydrogen, oxygen, nitrogen, carbon, marker, controls;
     public TMP_InputField planetName;
     public GameObject cockpit;
     bool nameUp = false;
@@ -145,5 +145,9 @@ public class UIController : MonoBehaviour
         if (marker.gameObject.activeSelf) {
             marker.gameObject.SetActive(false);
         }
+    }
+
+    public void ShowControls(bool show) {
+        controls.gameObject.SetActive(show);
     }
 }
