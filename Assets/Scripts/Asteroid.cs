@@ -57,6 +57,7 @@ public class Asteroid : MonoBehaviour
         Destroy(GetComponent<SphereCollider>());
         Destroy(mesh);
         Destroy(this.gameObject, 4.0f);
+        GetComponent<AudioSource>().Stop();
         if(isComet) {
             tail.Stop();
             head.Stop();
@@ -74,6 +75,7 @@ public class Asteroid : MonoBehaviour
         Destroy(GetComponent<SphereCollider>());
         Destroy(mesh);
         Destroy(this.gameObject, 4.0f);
+        GetComponent<AudioSource>().Stop();
         if (isComet) {
             tail.Stop();
             head.Stop();

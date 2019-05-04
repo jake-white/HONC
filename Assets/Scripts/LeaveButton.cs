@@ -25,6 +25,7 @@ public class LeaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
 
     public void OnPointerClick(PointerEventData eventData) {
+        Cursor.lockState = CursorLockMode.Locked;
         UIController.instance.LeavePlanet(PlayerController.instance.GetCurrentPlanet());
     }
 }

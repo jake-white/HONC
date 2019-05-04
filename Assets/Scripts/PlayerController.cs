@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     float hydrogen = 1.0f, oxygen = 1.0f, nitrogen = 1.0f, carbon = 1.0f;
     public float transferSpeed = 0.005f, lasercooldown = 2000;
     float lastFired;
+    bool isWebGL = false, locked = false;
 
     private void Awake() {
         if(instance == null) {
@@ -24,15 +25,38 @@ public class PlayerController : MonoBehaviour
         }
     }
     void Start() {
+        isWebGL = (Application.platform == RuntimePlatform.WebGLPlayer);
         rb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
+        locked = true;
+        LockCursor(true);
         cam.transform.SetPositionAndRotation(originalcam.position, originalcam.rotation);
         lastFired = -lasercooldown;
     }
 
+    void LockCursor(bool cursorLock) {
+        Cursor.visible = !cursorLock;
+        locked = cursorLock;
+        if (cursorLock) {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
     private void Update() {
+        if(!isWebGL) { //chrome handles escape on its own :(
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                if (locked) {
+                    LockCursor(false);
+                }
+            }
+        }
         if (!interacting) {
-            if (Input.GetAxis("Fire") > 0 && Time.time > lastFired + lasercooldown) {
+            if(!locked && Input.GetMouseButtonDown(0)) {
+                LockCursor(true);
+            }
+            else if (Input.GetAxis("Fire") > 0 && Time.time > lastFired + lasercooldown) {
                 GameObject newLaser = Instantiate(laserPrefab);
                 newLaser.transform.position = transform.position;
                 newLaser.transform.rotation = transform.rotation;
@@ -70,7 +94,7 @@ public class PlayerController : MonoBehaviour
             UIController.instance.CockpitNameDown();
         }
 
-        if (!interacting) {
+        if (!interacting && locked) {
             float yawInput, pitchInput, rollInput, thrustInput, warpInput;
             yawInput = Mathf.Clamp(Input.GetAxis("Yaw"), -1, 1) * .007f;
             pitchInput = Mathf.Clamp(Input.GetAxis("Pitch"), -1, 1) * .007f;
@@ -170,7 +194,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         starField.Stop();
         currentPlanet.Interact(this);
-        Cursor.lockState = CursorLockMode.None;
+        LockCursor(false);
         transform.LookAt(p.transform);
         transform.position = Vector3.MoveTowards(transform.position, currentPlanet.transform.position, 1);
     }
@@ -180,7 +204,7 @@ public class PlayerController : MonoBehaviour
         cam.transform.SetPositionAndRotation(originalcam.position, originalcam.rotation);
         GetComponent<Rigidbody>().isKinematic = false;
         currentPlanet.Leave(this);
-        Cursor.lockState = CursorLockMode.Locked;
+        LockCursor(true);
         lastPlanet = currentPlanet;
         currentPlanet = null;
         interacting = false;
